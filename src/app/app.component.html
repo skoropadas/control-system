@@ -1,0 +1,11 @@
+<hello name="{{ name }}"></hello>
+<p>Start editing to see some magic happen :)</p>
+
+<div>model: {{ model | json }}</div>
+
+<fl-checkbox value="first" [(ngModel)]="model">first</fl-checkbox>
+
+<fl-checkbox-group [(ngModel)]="model">
+  <fl-checkbox value="first">first</fl-checkbox>
+  <fl-checkbox value="second">second</fl-checkbox>
+</fl-checkbox-group>

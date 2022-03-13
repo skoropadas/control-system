@@ -1,27 +1,32 @@
-# CsDemo
+# Control System Demo
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.6.
+The repository shows an example of creating components using a declarative approach, as well as a control system that
+helps to create extendable and reusable controls.
 
-## Development server
+Demo on Stackblitz - https://stackblitz.com/edit/fl-control-system?file=src/index.html
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Pros:
 
-## Code scaffolding
+- By splitting into small reusable components, maximum flexibility and reusability of the code is achieved
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- The code of the components becomes very small and understandable, they contain only the logic necessary for its
+  operation
 
-## Build
+- Any of the components can be easily replaced
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+- You can extend existing components by adding your own
 
-## Running unit tests
+- You don't need to write different code like for example in comboboxes iterating through a list of elements to select
+  one
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+- A total of 5 classes cover all possible components that you may need in the component library, they also have no more
+  than 100 lines of code, which makes it easy to understand them
 
-## Running end-to-end tests
+- Fewer tests, it is enough to cover 5 classes with tests, in your components you need to cover only what you have
+  created
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## Cons
 
-## Further help
+- You have to figure out how they work
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+- Debugging is more difficult that usually, because you have to debug this 5 classes

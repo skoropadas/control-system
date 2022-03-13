@@ -32,7 +32,7 @@
 
 <div class="container">
   <label>comboboxModel: {{ comboboxModel | json }}</label>
-  <button (click)="opened = !opened">open</button>
+  <button (click)="opened = !opened">{{opened ? 'close' : 'open'}}</button>
 
   <fl-combobox-host [(ngModel)]="comboboxModel">
     <input flInput flComboboxInput>

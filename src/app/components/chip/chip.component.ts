@@ -11,35 +11,7 @@ import {FlSelectorBehaviour} from '../../enums/selector-behaviour';
   selector: 'fl-chip',
   template: `
     <ng-content></ng-content>`,
-  styles: [
-    `
-      :host {
-        padding: 8px 16px;
-        background-color: white;
-        border-radius: 8px;
-        border: 2px solid #0059ff;
-        cursor: pointer;
-
-        &:hover {
-          background-color: #c7dbff;
-        }
-
-        &:active {
-          background-color: #8eb4ff;
-        }
-
-        &:not(:last-of-type) {
-          margin-bottom: var(--fl-list-element-vertical-space);
-          margin-right: var(--fl-list-element-horizontal-space);
-        }
-
-        &[data-fl-checked='true'] {
-          background-color: #0059ff;
-          color: white;
-        }
-      }
-    `,
-  ],
+  styleUrls: ['./chip.component.scss'],
 })
 export class ChipComponent<T> extends FlControlSelector<T> {
   constructor(

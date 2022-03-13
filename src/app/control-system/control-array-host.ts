@@ -1,23 +1,22 @@
-import { ChangeDetectorRef, Directive, Input } from '@angular/core';
-import { AbstractControl, NgControl } from '@angular/forms';
-import { Observable, Subject } from 'rxjs';
-import { filter, map } from 'rxjs/operators';
-import { FlCompareHost } from '../classes/compare-host';
-import { FlSetCompare } from '../classes/set-compare';
-import { FL_DEFAULT_COMPARE } from '../constants/defaults';
-import { FlBaseControl } from '../interfaces/base-control';
-import { FlBaseControlHost } from '../interfaces/base-control-host';
-import { FlCompareFunction } from '../types/compare-fn';
-import { AbstractConstructor } from '../types/contructor';
-import { FlControl } from './control';
-import { FlControlSelector } from './control-selector';
+import {ChangeDetectorRef, Directive, Input} from '@angular/core';
+import {NgControl} from '@angular/forms';
+import {Observable, Subject} from 'rxjs';
+import {filter, map} from 'rxjs/operators';
+import {FlCompareHost} from '../classes/compare-host';
+import {FlSetCompare} from '../classes/set-compare';
+import {FL_DEFAULT_COMPARE} from '../constants/defaults';
+import {FlBaseControl} from '../interfaces/base-control';
+import {FlBaseControlHost} from '../interfaces/base-control-host';
+import {FlCompareFunction} from '../types/compare-fn';
+import {AbstractConstructor} from '../types/contructor';
+import {FlControl} from './control';
+import {FlControlSelector} from './control-selector';
 
 /** Uses to implement host that stores multiple values */
 @Directive()
 export abstract class FlControlArrayHost<T>
   extends FlControl<T[]>
-  implements FlBaseControlHost<T[], T | T[]>, FlCompareHost<T>
-{
+  implements FlBaseControlHost<T[], T | T[]>, FlCompareHost<T> {
   /** Uses to compare two values (usefull to compare two objects, for example by id) */
   @Input()
   public compareFn: FlCompareFunction<T> = FL_DEFAULT_COMPARE;
@@ -90,7 +89,7 @@ export abstract class FlControlArrayHost<T>
     this.updateControls();
   }
 
-  protected incomingUpdate(obj: T[] | null): void {
+  protected override incomingUpdate(obj: T[] | null): void {
     this.proxyModel = new FlSetCompare(this.compareFn, obj);
     this.updateControls();
   }

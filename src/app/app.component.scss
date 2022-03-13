@@ -1,0 +1,26 @@
+.container {
+  margin-bottom: 24px;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+}
+
+fl-combobox-host {
+  position: relative;
+  display: inline-block;
+
+  .dropdown {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    border: 1px solid #a3a3a3;
+    visibility: hidden;
+
+    &.is-opened {
+      visibility: visible;
+    }
+  }
+}

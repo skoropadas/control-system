@@ -1,17 +1,17 @@
 import {ChangeDetectionStrategy, ChangeDetectorRef, Component, Inject, Optional, Self} from '@angular/core';
-import {NgControl} from '@angular/forms';
-import {FlCompareHost} from '../../classes/compare-host';
 import {FlControlSelector} from '../../control-system/control-selector';
-import {FlBaseControlHost} from '../../interfaces/base-control-host';
+import {FlCompareHost} from '../../classes/compare-host';
 import {FL_CONTROL_HOST} from '../../tokens/control-host';
+import {FlBaseControlHost} from '../../interfaces/base-control-host';
+import {NgControl} from '@angular/forms';
 
 @Component({
-  selector: 'fl-checkbox',
-  templateUrl: './checkbox.component.html',
-  styleUrls: ['./checkbox.component.scss'],
+  selector: 'fl-radio-button',
+  templateUrl: './radio-button.component.html',
+  styleUrls: ['./radio-button.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class CheckboxComponent<T> extends FlControlSelector<T> {
+export class RadioButtonComponent<T> extends FlControlSelector<T> {
 
   constructor(
     protected override changeDetectorRef: ChangeDetectorRef,

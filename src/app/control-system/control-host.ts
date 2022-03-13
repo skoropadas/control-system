@@ -2,20 +2,20 @@ import {ChangeDetectorRef, Directive} from '@angular/core';
 import {NgControl} from '@angular/forms';
 import {Observable, Subject} from 'rxjs';
 import {filter, map} from 'rxjs/operators';
-import { FlBaseControl } from '../interfaces/base-control';
-import { FlBaseControlHost } from '../interfaces/base-control-host';
-import { AbstractConstructor, Constructor } from '../types/contructor';
-import { FlControl } from './control';
+import {FlBaseControl} from '../interfaces/base-control';
+import {FlBaseControlHost} from '../interfaces/base-control-host';
+import {AbstractConstructor, Constructor} from '../types/contructor';
+import {FlControl} from './control';
 
 /** Uses to implement base host which accepts the model as is */
 @Directive()
 export abstract class FlControlHost<T> extends FlControl<T> implements FlBaseControlHost<T, T> {
-	private controls: Set<FlControl<T>> = new Set<FlControl<T>>();
-	private updatesFrom: FlControl<T> | null = null;
-	private controlChange$: Subject<[FlBaseControl<T>, T | null]> = new Subject<[FlBaseControl<T>, T | null]>();
+  private controls: Set<FlControl<T>> = new Set<FlControl<T>>();
+  private updatesFrom: FlControl<T> | null = null;
+  private controlChange$: Subject<[FlBaseControl<T>, T | null]> = new Subject<[FlBaseControl<T>, T | null]>();
 
-	protected constructor(
-		protected override changeDetectorRef: ChangeDetectorRef,
+  protected constructor(
+    protected override changeDetectorRef: ChangeDetectorRef,
 		protected override host?: FlBaseControlHost<T>,
 		protected override ngControl?: NgControl,
 	) {
@@ -70,9 +70,9 @@ export abstract class FlControlHost<T> extends FlControl<T> implements FlBaseCon
 		this.updateControls(this.model);
 	}
 
-	protected incomingUpdate(value: T | null): void {
-		this.updateControls(value);
-	}
+  protected override incomingUpdate(value: T | null): void {
+    this.updateControls(value);
+  }
 
 	private updateControls(value: T | null): void {
 		this.controls.forEach((control: FlControl<T>) => {

@@ -1,0 +1,12 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  --fl-list-element-vertical-space: 8px;
+
+  &[data-fl-orientation="horizontal"] {
+    flex-direction: row;
+
+    --fl-list-element-vertical-space: 0;
+    --fl-list-element-horizontal-space: 8px;
+  }
+}

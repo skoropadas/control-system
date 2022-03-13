@@ -1,11 +1,18 @@
-import { Component, VERSION } from '@angular/core';
+import {ChangeDetectionStrategy, Component} from '@angular/core';
 
 @Component({
-  selector: 'my-app',
+  selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: [ './app.component.css' ]
+  styleUrls: ['./app.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class AppComponent  {
-  name = 'Angular ' + VERSION.major;
-  model: string | null = null;
+export class AppComponent {
+  public items: string[] = ['Apple', 'Orange', 'Kiwi', 'Banana'];
+  public opened: boolean = false;
+
+  public checkboxGroupModel: string[] | null = null;
+  public radioGroupModel: string | null = null;
+  public chipCheckboxModel: string[] | null = null;
+  public chipRadioModel: string[] | null = null;
+  public comboboxModel: string | null = null;
 }

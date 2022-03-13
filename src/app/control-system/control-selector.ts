@@ -1,24 +1,16 @@
-import {
-  ChangeDetectorRef,
-  Directive,
-  HostBinding,
-  Input,
-  OnChanges,
-  SimpleChanges,
-} from '@angular/core';
-import { NgControl } from '@angular/forms';
-import { FlCompareHost } from '../classes/compare-host';
-import { FL_DEFAULT_COMPARE } from '../constants/defaults';
-import { flMakePure } from '../decorators/pure';
-import { FlBaseControlHost } from '../interfaces/base-control-host';
-import { FlControl } from './control';
+import {ChangeDetectorRef, Directive, HostBinding, Input, OnChanges, SimpleChanges,} from '@angular/core';
+import {NgControl} from '@angular/forms';
+import {FlCompareHost} from '../classes/compare-host';
+import {FL_DEFAULT_COMPARE} from '../constants/defaults';
+import {flMakePure} from '../decorators/pure';
+import {FlBaseControlHost} from '../interfaces/base-control-host';
+import {FlControl} from './control';
 
 /** Uses to implement controls with state (like checkbox, radio-button, chip, etc.) */
 @Directive()
 export abstract class FlControlSelector<T>
   extends FlControl<T | boolean>
-  implements OnChanges
-{
+  implements OnChanges {
   @Input()
   public value: T | true = true;
 
@@ -63,12 +55,12 @@ export abstract class FlControlSelector<T>
     this.updateModel(this.checked === false ? this.value : false);
   }
 
-  @HostBinding('attr.data-intermediate')
+  @HostBinding('attr.data-fl-intermediate')
   public get isIntermediate(): boolean {
     return this.model === null && !!this.hasIntermediate;
   }
 
-  @HostBinding('attr.data-checked')
+  @HostBinding('attr.data-fl-checked')
   public get checked(): boolean | null {
     return this.compare(this.value, this.model)
       ? true

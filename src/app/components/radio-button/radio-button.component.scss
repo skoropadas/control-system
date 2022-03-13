@@ -1,0 +1,8 @@
+:host {
+  display: inline-block;
+
+  &:not(:last-of-type) {
+    margin-bottom: var(--fl-list-element-vertical-space);
+    margin-right: var(--fl-list-element-horizontal-space);
+  }
+}

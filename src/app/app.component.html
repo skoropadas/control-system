@@ -1,11 +1,43 @@
-<hello name="{{ name }}"></hello>
-<p>Start editing to see some magic happen :)</p>
+<div class="container">
+  <label>checkboxGroupModel: {{ checkboxGroupModel | json }}</label>
 
-<div>model: {{ model | json }}</div>
+  <fl-checkbox-group [(ngModel)]="checkboxGroupModel">
+    <fl-checkbox *ngFor="let item of items" [value]="item">{{item}}</fl-checkbox>
+  </fl-checkbox-group>
+</div>
 
-<fl-checkbox value="first" [(ngModel)]="model">first</fl-checkbox>
+<div class="container">
+  <label>radioGroupModel: {{ radioGroupModel | json }}</label>
 
-<fl-checkbox-group [(ngModel)]="model">
-  <fl-checkbox value="first">first</fl-checkbox>
-  <fl-checkbox value="second">second</fl-checkbox>
-</fl-checkbox-group>
+  <fl-radio-group [(ngModel)]="radioGroupModel">
+    <fl-radio-button *ngFor="let item of items" [value]="item">{{item}}</fl-radio-button>
+  </fl-radio-group>
+</div>
+
+<div class="container">
+  <label>chipCheckboxModel: {{ chipCheckboxModel | json }}</label>
+
+  <fl-checkbox-group [(ngModel)]="chipCheckboxModel" orientation="horizontal">
+    <fl-chip *ngFor="let item of items" [value]="item">{{item}}</fl-chip>
+  </fl-checkbox-group>
+</div>
+
+<div class="container">
+  <label>chipRadioModel: {{ chipRadioModel | json }}</label>
+
+  <fl-radio-group [(ngModel)]="chipRadioModel" orientation="horizontal">
+    <fl-chip *ngFor="let item of items" [value]="item">{{item}}</fl-chip>
+  </fl-radio-group>
+</div>
+
+<div class="container">
+  <label>comboboxModel: {{ comboboxModel | json }}</label>
+  <button (click)="opened = !opened">open</button>
+
+  <fl-combobox-host [(ngModel)]="comboboxModel">
+    <input flInput flComboboxInput>
+    <div class="dropdown" [class.is-opened]="opened">
+      <fl-option *ngFor="let item of items" [value]="item">{{item}}</fl-option>
+    </div>
+  </fl-combobox-host>
+</div>

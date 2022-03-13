@@ -1,0 +1,18 @@
+:host {
+  padding: 8px 16px;
+  background-color: white;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #c7dbff;
+  }
+
+  &:active {
+    background-color: #8eb4ff;
+  }
+
+  &[data-fl-checked='true'] {
+    background-color: #0059ff;
+    color: white;
+  }
+}

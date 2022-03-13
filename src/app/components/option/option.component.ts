@@ -9,28 +9,7 @@ import {NgControl} from '@angular/forms';
   selector: 'fl-option',
   template: `
     <ng-content></ng-content>`,
-  styles: [
-    `
-      :host {
-        padding: 8px 16px;
-        background-color: white;
-        cursor: pointer;
-
-        &:hover {
-          background-color: #c7dbff;
-        }
-
-        &:active {
-          background-color: #8eb4ff;
-        }
-
-        &[data-fl-checked='true'] {
-          background-color: #0059ff;
-          color: white;
-        }
-      }
-    `,
-  ],
+  styleUrls: ['./option.component.scss']
 })
 export class OptionComponent<T> extends FlControlSelector<T> {
   constructor(

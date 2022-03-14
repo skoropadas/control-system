@@ -5,6 +5,10 @@ helps to create extendable and reusable controls.
 
 Demo on Stackblitz - https://stackblitz.com/edit/fl-control-system?file=src/index.html
 
+## Why?
+
+Previously, we created a library of components by analogy with angular material, we had one single design, but the more projects started using it, the more we felt the lack of customization, some projects wanted to add functionality, some wanted to remove any components in the controls and replace them with their own, etc. A logical solution would be to add new inputs and outputs, but this led to cumbersome components that were more difficult to maintain over time, and in the process of adding new features, despite the tests, bugs inevitably appeared. The solution was this approach, we left the pre-created components with a certain set of settings, and also gave the opportunity to create any of the controls ourselves, thus adding or removing the necessary parts from them.
+
 ## Pros:
 
 - By splitting into small reusable components, maximum flexibility and reusability of the code is achieved
